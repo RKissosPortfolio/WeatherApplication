@@ -20,6 +20,7 @@
 		49D6ADDC2AF2AC730004BD42 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADDB2AF2AC730004BD42 /* WeatherViewModel.swift */; };
 		49D6ADDE2AF2ACE40004BD42 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADDD2AF2ACE40004BD42 /* Models.swift */; };
 		49D6ADE02AF2AD350004BD42 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADDF2AF2AD350004BD42 /* NetworkManager.swift */; };
+		49D6ADE22AF2AD850004BD42 /* CurrentWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		49D6ADDB2AF2AC730004BD42 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		49D6ADDD2AF2ACE40004BD42 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		49D6ADDF2AF2AD350004BD42 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				49D6ADDB2AF2AC730004BD42 /* WeatherViewModel.swift */,
 				49D6ADDD2AF2ACE40004BD42 /* Models.swift */,
 				49D6ADDF2AF2AD350004BD42 /* NetworkManager.swift */,
+				49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */,
 			);
 			path = WeatherApplication;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				49D6ADDA2AF2A9760004BD42 /* HomePage.swift in Sources */,
 				49D6ADDC2AF2AC730004BD42 /* WeatherViewModel.swift in Sources */,
 				49D6ADB42AF2A88B0004BD42 /* Persistence.swift in Sources */,
+				49D6ADE22AF2AD850004BD42 /* CurrentWeatherResponse.swift in Sources */,
 				49D6ADAD2AF2A88A0004BD42 /* ContentView.swift in Sources */,
 				49D6ADE02AF2AD350004BD42 /* NetworkManager.swift in Sources */,
 				49D6ADAB2AF2A88A0004BD42 /* WeatherApplicationApp.swift in Sources */,
