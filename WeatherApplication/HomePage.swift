@@ -393,3 +393,11 @@ struct BottomBar: View {
         }
     }
 }
+
+extension WeatherViewModel {
+    func viewModelForDay(_ day: Int) -> WeatherViewModel {
+        let newViewModel = WeatherViewModel(lat: self.latitude, lon: self.longitude, networkManager:  NetworkManager())
+        newViewModel.fiveDayForecast = self.forecastData(for: day)
+        return newViewModel
+    }
+}
