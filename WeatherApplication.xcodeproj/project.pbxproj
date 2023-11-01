@@ -17,6 +17,7 @@
 		49D6ADCB2AF2A88B0004BD42 /* WeatherApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADCA2AF2A88B0004BD42 /* WeatherApplicationUITests.swift */; };
 		49D6ADCD2AF2A88B0004BD42 /* WeatherApplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADCC2AF2A88B0004BD42 /* WeatherApplicationUITestsLaunchTests.swift */; };
 		49D6ADDA2AF2A9760004BD42 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADD92AF2A9760004BD42 /* HomePage.swift */; };
+		49D6ADDC2AF2AC730004BD42 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADDB2AF2AC730004BD42 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		49D6ADCA2AF2A88B0004BD42 /* WeatherApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApplicationUITests.swift; sourceTree = "<group>"; };
 		49D6ADCC2AF2A88B0004BD42 /* WeatherApplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		49D6ADD92AF2A9760004BD42 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		49D6ADDB2AF2AC730004BD42 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				49D6ADB52AF2A88B0004BD42 /* WeatherApplication.xcdatamodeld */,
 				49D6ADB02AF2A88B0004BD42 /* Preview Content */,
 				49D6ADD92AF2A9760004BD42 /* HomePage.swift */,
+				49D6ADDB2AF2AC730004BD42 /* WeatherViewModel.swift */,
 			);
 			path = WeatherApplication;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D6ADDA2AF2A9760004BD42 /* HomePage.swift in Sources */,
+				49D6ADDC2AF2AC730004BD42 /* WeatherViewModel.swift in Sources */,
 				49D6ADB42AF2A88B0004BD42 /* Persistence.swift in Sources */,
 				49D6ADAD2AF2A88A0004BD42 /* ContentView.swift in Sources */,
 				49D6ADAB2AF2A88A0004BD42 /* WeatherApplicationApp.swift in Sources */,
