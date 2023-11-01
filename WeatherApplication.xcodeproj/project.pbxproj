@@ -23,6 +23,7 @@
 		49D6ADE22AF2AD850004BD42 /* CurrentWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */; };
 		49D6ADE42AF2B0D50004BD42 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE32AF2B0D50004BD42 /* WeatherViewModelTests.swift */; };
 		49D6ADE62AF2B10D0004BD42 /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE52AF2B10D0004BD42 /* MockManager.swift */; };
+		49D6ADE92AF2B2D20004BD42 /* ValidResponseCurrentWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D6ADE82AF2B2D20004BD42 /* ValidResponseCurrentWeather.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
 		49D6ADE32AF2B0D50004BD42 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 		49D6ADE52AF2B10D0004BD42 /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
+		49D6ADE82AF2B2D20004BD42 /* ValidResponseCurrentWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ValidResponseCurrentWeather.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				49D6ADC02AF2A88B0004BD42 /* WeatherApplicationTests.swift */,
 				49D6ADE32AF2B0D50004BD42 /* WeatherViewModelTests.swift */,
 				49D6ADE52AF2B10D0004BD42 /* MockManager.swift */,
+				49D6ADE82AF2B2D20004BD42 /* ValidResponseCurrentWeather.json */,
 			);
 			path = WeatherApplicationTests;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D6ADE92AF2B2D20004BD42 /* ValidResponseCurrentWeather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
