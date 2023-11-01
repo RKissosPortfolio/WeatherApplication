@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		49D6ADAB2AF2A88A0004BD42 /* WeatherApplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADAA2AF2A88A0004BD42 /* WeatherApplicationApp.swift */; };
-		49D6ADAD2AF2A88A0004BD42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADAC2AF2A88A0004BD42 /* ContentView.swift */; };
 		49D6ADAF2AF2A88B0004BD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D6ADAE2AF2A88B0004BD42 /* Assets.xcassets */; };
 		49D6ADB22AF2A88B0004BD42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D6ADB12AF2A88B0004BD42 /* Preview Assets.xcassets */; };
 		49D6ADB42AF2A88B0004BD42 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADB32AF2A88B0004BD42 /* Persistence.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		49D6ADA72AF2A88A0004BD42 /* WeatherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D6ADAA2AF2A88A0004BD42 /* WeatherApplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApplicationApp.swift; sourceTree = "<group>"; };
-		49D6ADAC2AF2A88A0004BD42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49D6ADAE2AF2A88B0004BD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49D6ADB12AF2A88B0004BD42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49D6ADB32AF2A88B0004BD42 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				49D6ADAA2AF2A88A0004BD42 /* WeatherApplicationApp.swift */,
-				49D6ADAC2AF2A88A0004BD42 /* ContentView.swift */,
 				49D6ADAE2AF2A88B0004BD42 /* Assets.xcassets */,
 				49D6ADB32AF2A88B0004BD42 /* Persistence.swift */,
 				49D6ADB52AF2A88B0004BD42 /* WeatherApplication.xcdatamodeld */,
@@ -292,7 +289,6 @@
 				49D6ADDC2AF2AC730004BD42 /* WeatherViewModel.swift in Sources */,
 				49D6ADB42AF2A88B0004BD42 /* Persistence.swift in Sources */,
 				49D6ADE22AF2AD850004BD42 /* CurrentWeatherResponse.swift in Sources */,
-				49D6ADAD2AF2A88A0004BD42 /* ContentView.swift in Sources */,
 				49D6ADE02AF2AD350004BD42 /* NetworkManager.swift in Sources */,
 				49D6ADAB2AF2A88A0004BD42 /* WeatherApplicationApp.swift in Sources */,
 				49D6ADB72AF2A88B0004BD42 /* WeatherApplication.xcdatamodeld in Sources */,
