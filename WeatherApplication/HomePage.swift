@@ -435,3 +435,54 @@ struct HomePage_Previews: PreviewProvider {
     }
 }
 #endif
+
+struct PullToRefreshView: View {
+    @State private var isLoading = false
+    @State private var offset = CGFloat.zero
+    @ObservedObject var weatherViewModel: WeatherViewModel
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    if isLoading {
+                        ProgressView() // Display a loader while refreshing
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 20)
+                    }
+                    
+                    // Your main content here
+                    Text("Your content goes here!")
+                }
+                .background(
+                    // Invisible drag area
+                    GeometryReader {
+                        Color.clear.preference(key: ViewOffsetKey.self, value: $0.frame(in: .global).minY)
+                    }
+                )
+            }
+            .onPreferenceChange(ViewOffsetKey.self) { offset in
+                // Detects the drag amount
+                if !isLoading {
+                    self.offset = offset - geometry.size.height
+                    if self.offset > 50 {  // "50" determines how much user has to pull down to refresh
+                        self.isLoading = true
+                        self.refresh()  // Your data fetching method
+                    }
+                }
+            }
+            .gesture(DragGesture().onChanged { value in
+                if value.startLocation.y < geometry.size.height * 0.25 && value.translation.height > 0 {
+                    isLoading = false
+                }
+            })
+        }
+    }
+    
+    func refresh() {
+        // Your data fetching logic here
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Simulating a network delay
+            self.isLoading = false
+        }
+    }
+}
