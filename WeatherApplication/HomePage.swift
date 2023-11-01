@@ -363,3 +363,33 @@ struct WeatherDailyView: View {
         }
     }
 }
+
+struct BottomBar: View {
+    var body: some View {
+        ZStack {
+            Color(red: 0.47, green: 0.52, blue: 0.76)
+            
+            HStack(spacing: 16) {
+                cityView(imageName: "atlanta", cityName: "Atlanta")
+                cityView(imageName: "new-york", cityName: "Boston")
+                cityView(imageName: "tokyo", cityName: "Tokyo")
+                cityView(imageName: "paris", cityName: "Paris")
+                cityView(imageName: "london", cityName: "London")
+            }
+            .padding(.horizontal, 10)
+        }
+        .frame(height: 120)
+    }
+    
+    func cityView(imageName: String, cityName: String) -> some View {
+        VStack {
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50) // Smaller image
+            Text(cityName)
+                .font(.system(size: 17)) // Smaller font size
+                .foregroundColor(.white)
+        }
+    }
+}
