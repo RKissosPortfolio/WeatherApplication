@@ -407,3 +407,14 @@ extension List {
         return List(dt: 0, main: MainClass(temp: 0.0, feelsLike: 0.0, tempMin: 0.0, tempMax: 0.0, pressure: 0, seaLevel: 0, grndLevel: 0, humidity: 0, tempKf: 0.0), weather: [Weather(id: 0, main: .clear, description: .clearSky, icon: "")], clouds: Clouds(all: 0), wind: Wind(speed: 0.0, deg: 0, gust: 0.0), visibility: 0, pop: 0, sys: Sys(pod: .d), dtTxt: "")
     }
 }
+
+func formattedDate(from string: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+    if let date = dateFormatter.date(from: string) {
+        dateFormatter.dateFormat = "EEEE, MMM d"
+        return dateFormatter.string(from: date)
+    }
+    return string
+}
