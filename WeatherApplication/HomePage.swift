@@ -206,3 +206,160 @@ struct CurrentWeatherCard: View {
         }
     }
 }
+
+struct WeatherHourlyView: View {
+    var weatherData: [List]
+    
+    func formattedHour(from string: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        if let date = dateFormatter.date(from: string) {
+            dateFormatter.dateFormat = "h a"
+            return dateFormatter.string(from: date)
+        }
+        return string
+    }
+    
+    func iconName(for condition: String) -> String {
+        switch condition {
+        case "Clear":
+            return "sunny"
+        case "Clouds":
+            return "cloudy"
+        case "Rain":
+            return "rainy"
+        default:
+            return "sunny"
+        }
+    }
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(height: 140) // Increased height to accommodate the date
+                .background(Color(red: 1, green: 0.62, blue: 0.37))
+                .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 4)
+            
+            VStack {
+                // Add the date label at the top
+                Text(formattedDate(from: weatherData.first?.dtTxt ?? ""))
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding(.top, 8)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(weatherData.prefix(8), id: \.dt) { data in
+                            VStack(alignment: .center, spacing: 5) {
+                                Text("\(formattedHour(from: data.dtTxt))")
+                                    .foregroundColor(.white)
+                                Image(iconName(for: data.weather[0].main.rawValue))
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                Text("\(String(format: "%0.f°", data.main.temp))")
+                                    .foregroundColor(.white)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .padding(.horizontal, 10) // Consistent horizontal padding
+                }
+            }
+        }
+    }
+}
+
+struct WeatherContainerView: View {
+    var weatherData: [List]
+    @ObservedObject var viewModel: WeatherViewModel
+
+    // Define a list of colors for the cells
+    let cellColors: [Color] = [.blue, .green, .yellow, .orange, .red]
+
+    var body: some View {
+        VStack {
+            ForEach(0..<5, id: \.self) { day in
+                let dailyData = viewModel.forecastData(for: day)
+                let minTemp = dailyData.min { $0.main.temp < $1.main.temp }?.main.temp ?? 0
+                let maxTemp = dailyData.max { $0.main.temp < $1.main.temp }?.main.temp ?? 0
+                
+                // Use the refactored method to get the weather condition
+                let condition = weatherCondition(for: day)
+                
+                // Extract the date from the first item of dailyData
+                let date = dailyData.first?.dtTxt ?? ""
+                
+                // Use the cell color based on the day index
+                WeatherDailyView(date: date, minTemp: minTemp, maxTemp: maxTemp, cellColor: cellColors[day % cellColors.count], weatherCondition: condition)
+            }
+        }
+    }
+
+    // Refactored method to get the weather condition
+    private func weatherCondition(for day: Int) -> MainEnum {
+        if day < weatherData.count {
+            return weatherData[day].weather.first?.main ?? .clear
+        } else {
+            // Return a default value if the index is out of range
+            return .clear
+        }
+    }
+
+}
+
+
+struct WeatherDailyView: View {
+    var date: String
+    var minTemp: Double
+    var maxTemp: Double
+    var cellColor: Color
+    var weatherCondition: MainEnum
+    
+    func formattedDate(from string: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        if let date = dateFormatter.date(from: string) {
+            dateFormatter.dateFormat = "EEEE, MMMM d"
+            return dateFormatter.string(from: date)
+        }
+        return string
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(formattedDate(from: date))
+                .font(.headline)
+            
+            HStack {
+                // Display the icon here
+                Image(systemName: iconName(for: weatherCondition))
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)  // Adjust size as necessary
+
+                Text("Min: \(String(format: "%.1f", minTemp))°F")
+                    .padding(.leading)
+                Spacer()
+                Text("Max: \(String(format: "%.1f", maxTemp))°F")
+                    .padding(.trailing)
+            }
+        }
+        .padding()
+        .background(cellColor.opacity(0.5))
+        .cornerRadius(8)
+    }
+
+    func iconName(for condition: MainEnum) -> String {
+        // Map your weather conditions to appropriate image names
+        switch condition {
+        case .clear:
+            return "sun.max.fill"
+        case .clouds:
+            return "cloud.fill"
+        // Add other cases as necessary
+        }
+    }
+}
