@@ -22,6 +22,7 @@
 		49D6ADE02AF2AD350004BD42 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADDF2AF2AD350004BD42 /* NetworkManager.swift */; };
 		49D6ADE22AF2AD850004BD42 /* CurrentWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */; };
 		49D6ADE42AF2B0D50004BD42 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE32AF2B0D50004BD42 /* WeatherViewModelTests.swift */; };
+		49D6ADE62AF2B10D0004BD42 /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6ADE52AF2B10D0004BD42 /* MockManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		49D6ADDF2AF2AD350004BD42 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		49D6ADE12AF2AD850004BD42 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
 		49D6ADE32AF2B0D50004BD42 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
+		49D6ADE52AF2B10D0004BD42 /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				49D6ADC02AF2A88B0004BD42 /* WeatherApplicationTests.swift */,
 				49D6ADE32AF2B0D50004BD42 /* WeatherViewModelTests.swift */,
+				49D6ADE52AF2B10D0004BD42 /* MockManager.swift */,
 			);
 			path = WeatherApplicationTests;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D6ADE62AF2B10D0004BD42 /* MockManager.swift in Sources */,
 				49D6ADC12AF2A88B0004BD42 /* WeatherApplicationTests.swift in Sources */,
 				49D6ADE42AF2B0D50004BD42 /* WeatherViewModelTests.swift in Sources */,
 			);
