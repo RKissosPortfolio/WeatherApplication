@@ -427,3 +427,11 @@ struct ViewOffsetKey: PreferenceKey {
         value += nextValue()
     }
 }
+
+#if DEBUG
+struct HomePage_Previews: PreviewProvider {
+    static var previews: some View {
+        HomePage(viewModel: WeatherViewModel(lat: 33.7489924, lon: -84.3902644, networkManager:  NetworkManager()))
+    }
+}
+#endif
